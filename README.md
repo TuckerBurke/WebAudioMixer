@@ -8,9 +8,9 @@ I initially created this web application for my Rich Media Web App Development c
 [HTML](index.html)  
 [Play](http://www.tuckerburke.com/Web-Audio-Mixer/)  
 ## Citation
-Abstraction - Three Red Hearts - Pixel War 2 [License](https://creativecommons.org/licenses/by/4.0/)
-Carpenter Brut - Trilogy - Roller Mobster (In Video Playthrough) [BandCamp](https://carpenterbrut.bandcamp.com/track/roller-mobster-2)
-SHREDDER 1984 - Prophet of Doom - Sharpen that Guillotine [BandCamp](https://shredder1984.bandcamp.com/track/sharpen-that-guillotine)
+Abstraction - Three Red Hearts - Pixel War 2 [License](https://creativecommons.org/licenses/by/4.0/)  
+Carpenter Brut - Trilogy - Roller Mobster (In Video Playthrough) [BandCamp](https://carpenterbrut.bandcamp.com/track/roller-mobster-2)  
+SHREDDER 1984 - Prophet of Doom - Sharpen that Guillotine [BandCamp](https://shredder1984.bandcamp.com/track/sharpen-that-guillotine)  
 ## Screenshots
 ![](screen captures/Screen-shot.png?raw=true)
 ![](screen captures/Web-Audio-Mixer-Canvas.gif?raw=true)
