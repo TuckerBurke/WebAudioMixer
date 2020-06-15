@@ -1,8 +1,8 @@
 # Web Audio Mixer
 ## About
-Web Audio Mixer is an online DJ instrument. It allows you to open audio files from your hard drive and blend them together using a DJ inspired mix board. It is currently live on my website, so you can play with it [here](http://www.tuckerburke.com/Web-Audio-Mixer/).
+Web Audio Mixer is an online DJ instrument. It allows you to open audio files from your hard drive and blend them using a DJ inspired mix board. It's currently live on my website so that you can play with it [here](http://www.tuckerburke.com/Web-Audio-Mixer/).
 ## Documentation
-I created this game for my Interactive Media Development course at RIT. This was my first project assembled in Unity and was coded using C#. The sprites were hand drawn with ink on tracing paper for Inktober. The purpose of the assignment was to utilize vector forces for controls and physics. I recently added a bit more juice and functionality to the prototype to flesh it out as a portfolio piece.
+I initially created this web application for my Rich Media Web App Development course at Rochester Institute of Technology. It utilizes the web audio api with quite a few nodes, the UI is in HTML, and the canvas output programmed using JavaScript. There are a couple of features I would still like to add, like pitch adjustment and nudge. These additions would allow for beat matching and would complete the tool. Next time around, I would like to create a synthesizer VST plugin.
 ## Navigation 
 [Unity Project Files](ProjectFiles/Asteroids)  
 [C# Scripts](ProjectFiles/Asteroids/Assets/Scripts)  
