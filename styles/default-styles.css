@@ -1,0 +1,117 @@
+#analogLabel {
+	font-family: 'Ubuntu Mono', monospace;
+	color: #778c74;
+}
+
+#digitalLabel {
+	font-family: 'Ubuntu Mono', monospace;
+	color: #778c74;
+}
+
+input[type="file"] {
+	display: none;
+}
+
+.customFileUploader {
+	background-color: #3a3a3a;
+	display: inline-block;
+	padding: 12px 12px;
+	cursor: pointer;
+	font-family: 'Ubuntu Mono', monospace;
+	color: #778c74;
+	font-size: 1.2rem;
+  	width: 6rem;
+	border-top: 2px solid #767676;
+	border-left: 2px solid #767676;
+	border-bottom: 2px solid #212121;
+	border-right: 2px solid #212121;
+}
+
+body {
+	background: #6a6a6a;
+}
+
+h1 {
+	font-family: 'Ubuntu Mono', monospace;
+	color: #778c74;
+	margin-left: 30px;
+	padding-top: 6px;
+	font-size: 24px;
+}
+
+#container {
+	margin: auto;
+	width: 860px;
+	background-color: #3a3a3a;
+	padding-bottom: 30px;
+}
+
+canvas {
+	margin-left: 30px;
+	margin-bottom: 1rem;
+	margin-top: -6px;
+	background: #fafafa;
+}
+
+#filters {
+	text-align: center;
+	font-family: 'Ubuntu Mono', monospace;
+	color: #778c74;
+}
+
+#channelOne, #channelTwo {
+	text-align: center;
+	width: 260px;
+	display:inline-block;
+}
+
+#channelOne {
+	float: left;
+}
+
+#mixer {
+	display:inline-block;	
+}
+
+#cross {
+	text-align: center;
+	margin-left: 2rem;
+	margin-top: 240px;
+}
+#crossFader {
+	width: 250px;
+}
+
+#channelTwo {
+	float: right;
+}
+
+#gainSliderOne, #highSliderOne, #midSliderOne, #lowSliderOne,
+#gainSliderTwo, #highSliderTwo, #midSliderTwo, #lowSliderTwo {
+	width: 60px;
+	height: 10px;
+}
+
+#volumeSliderOne, #volumeSliderTwo {
+	transform: rotateZ(270deg);
+	width: 100px;
+	margin-top: 60px;
+	margin-bottom: 50px;
+}
+
+section {
+  	margin-bottom: 1rem;
+}
+
+#playButtonOne, #playButtonTwo {
+  	font-size: 1.2rem;
+  	width: 6rem;
+}
+
+button[data-playing="yes"]:after {
+  	content: "Pause";
+}
+
+button[data-playing="no"]:after {
+  	content: "Play";
+}

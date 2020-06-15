@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Web Audio Mixer</title>
+	
+	<!--Load external font (google font)-->
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+	
+	<!--Load external style sheet-->
+	<link href="styles/default-styles.css" type="text/css" rel="stylesheet" />
+	
+	<!--Load external java modules-->
+	<script src="./src/loader.js" type="module">
+	
+		// Chrome autoplay fix
+		// https://developers.google.com/web/updates/2017/09/autoplay-policy-changes
+		document.querySelector("audio").onplay = (e) => {
+  		if (audioCtx.state == "suspended") {
+    	audioCtx.resume();
+  }
+};</script>
+</head>
+<body>
+<main>
+	
+	<div id="container">
+		<h1>Web Audio Mixer</h1>
+		
+		<!--Audio visualization-->
+		<canvas width="800" height="400"></canvas>
+
+		<section id="filters">
+		  <span><input type="checkbox" id="gradientCB" checked><label for="gradientCB">Show Gradient</label></span>
+		  <span><input type="checkbox" id="barsCB" checked><label for="barsCB">Show Bars</label></span>
+		  <span><input type="checkbox" id="circlesCB" checked><label for="circlesCB">Show Circles</label></span>
+		  <span><input type="checkbox" id="noiseCB"><label for="noiseCB">Show Noise</label></span>
+		  <span><input type="checkbox" id="invertCB"><label for="invertCB">Invert Colors</label></span>
+		  <span><input type="checkbox" id="embossCB"><label for="embossCB">Show Emboss</label></span>
+		</section><br>
+
+		<div id="controls">
+		
+<!--	**********  CHANNEL ONE  **********		-->	
+		
+			<div id="channelOne">
+					
+				<label title="Click to browse and select an audio file to load into Web Audio Mixer." for="uploadOne" class="customFileUploader">Load Track</label>
+					<input type="file" id="uploadOne" accept="audio/*"><br><br><br>
+				
+				<label id="analogLabel">Channel 1</label><br><br>
+				
+				<section id="gain">
+					<label title="Adjusts the audio input volume prior to equalization." id="analogLabel">Gain :</label>
+					<input title="Adjusts the audio input volume prior to equalization." type="range" id="gainSliderOne" min="0" max="2" value="1" step="0.01">
+				</section><br>
+				
+				<section id="eq">
+					<label title="Adjusts the amplification of high frequency audio. ( >1280 hz )" id="analogLabel">High :</label>
+					<input title="Adjusts the amplification of high frequency audio. ( >1280 hz )"type="range" id="highSliderOne" min="-20" max="20" value="0" step="1"><br>
+					
+					<label title="Adjusts the amplification of mid range frequency audio. ( peak at 720 hz )" id="analogLabel">Mid- :</label>
+					<input title="Adjusts the amplification of mid range frequency audio. ( peak at 720 hz )" type="range" id="midSliderOne" min="-20" max="20" value="0" step="1"><br>
+					
+					<label title="Adjusts the amplification of low frequency audio. ( <160 hz )" id="analogLabel">Low- :</label>
+					<input title="Adjusts the amplification of low frequency audio. ( <160 hz )" type="range" id="lowSliderOne" min="-20" max="20" value="0" step="1"><br>
+				</section><br>
+				
+				<section id="volume">
+					<label title="Adjusts audio volume after equalization." id="analogLabel">Volume<br></label>
+					<input title="Adjusts audio volume after equalization." type="range" id="volumeSliderOne" min="0" max="1" value="0.9" step="0.01">
+				</section>
+
+				<section id="buttons">
+					<button id="playButtonOne" class="customFileUploader" data-playing="no"></button>
+				</section>
+
+			</div><!-- channelOne -->
+
+
+<!--	**********  MIXER  Panel  **********		-->
+						
+			<div id="mixer">
+				<section id="cross">
+					<label title="Select the rate at which the crossfader blends the two audio channels. Linear is smooth, squared is an exponential rate of change often used for scratching." id="analogLabel">Graduated Cross Fader</label><br><br>
+  					<label id="analogLabel" title="Select the rate at which the crossfader blends the two audio channels. Linear is smooth, squared is an exponential rate of change often used for scratching.">Linear</label>
+  					<input type="radio" name="graduated" id="linear" value=0 checked="checked" title="Select the rate at which the crossfader blends the two audio channels. Linear is smooth, squared is an exponential rate of change often used for scratching.">
+  					<input type="radio" name="graduated" id="exponential" value=1 title="Select the rate at which the crossfader blends the two audio channels. Linear is smooth, squared is an exponential rate of change often used for scratching.">
+  					<label id="analogLabel" title="Select the rate at which the crossfader blends the two audio channels. Linear is smooth, squared is an exponential rate of change often used for scratching.">Square</label><br><br><br>
+  					
+					<label id="analogLabel" title="Inverts the poles on the crossfader switching which side is associated with which channel. Often used for scratching.">Hamster Switch</label><br><br>
+  					<label id="analogLabel" title="Inverts the poles on the crossfader switching which side is associated with which channel. Often used for scratching.">1&lt;-&gt;2</label>
+  					<input type="radio" name="hamster" id="regular" value=0 checked="checked" title="Inverts the poles on the crossfader switching which side is associated with which channel. Often used for scratching.">
+  					<input type="radio" name="hamster" id="inverted" value=1 title="Inverts the poles on the crossfader switching which side is associated with which channel. Often used for scratching.">
+  					<label id="analogLabel" title="Inverts the poles on the crossfader switching which side is associated with which channel. Often used for scratching.">2&lt;-&gt;1</label><br><br><br>
+  					
+					<label id="analogLabel" title="Used to blend the two audio channels.">Cross Fader</label><br>
+					<input type="range" id="crossFader" min="0" max="1" value="0.5" step="0.001" title="Used to blend the two audio channels.">
+				</section>
+			</div><!-- mixer -->
+
+						
+<!--	**********  CHANNEL TWO  **********		-->
+		
+			<div id="channelTwo">
+			
+				<label title="Click to browse and select an audio file to load into Web Audio Mixer." for="uploadTwo" class="customFileUploader">Load Track</label>
+					<input type="file" id="uploadTwo" accept="audio/*"><br><br><br>
+				
+				<label id="analogLabel">Channel 2</label><br><br>
+				
+				<section id="gain">
+					<label title="Adjusts the audio input volume prior to equalization." id="analogLabel">Gain :</label>
+					<input title="Adjusts the audio input volume prior to equalization." type="range" id="gainSliderTwo" min="0" max="2" value="1" step="0.01">
+				</section><br>
+
+				<section id="eq">
+					<label title="Adjusts the amplification of high frequency audio. ( >1280 hz )" id="analogLabel">High :</label>
+					<input title="Adjusts the amplification of high frequency audio. ( >1280 hz )" type="range" id="highSliderTwo" min="-20" max="20" value="0" step="1"><br>
+					
+					<label title="Adjusts the amplification of mid range frequency audio. ( peak at 720 hz )" id="analogLabel">Mid- :</label>
+					<input title="Adjusts the amplification of mid range frequency audio. ( peak at 720 hz )" type="range" id="midSliderTwo" min="-20" max="20" value="0" step="1"><br>
+					
+					<label title="Adjusts the amplification of low frequency audio. ( <160 hz )" id="analogLabel">Low- :</label>
+					<input title="Adjusts the amplification of low frequency audio. ( <160 hz )" type="range" id="lowSliderTwo" min="-20" max="20" value="0" step="1"><br>
+				</section><br>
+				
+				<section id="volume">
+					<label title="Adjusts audio volume after equalization." id="analogLabel">Volume<br></label>
+					<input title="Adjusts audio volume after equalization." type="range" id="volumeSliderTwo" min="0" max="1" value="0.9" step="0.01">
+				</section>
+
+				<section id="buttons">
+					<button id="playButtonTwo" class="customFileUploader" data-playing="no"></button>
+				</section>
+
+			</div><!-- channelTwo -->
+		</div><!-- controls -->
+	</div><!-- container -->
+	
+</main>
+</body>
+</html>
