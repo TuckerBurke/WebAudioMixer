@@ -12,6 +12,6 @@ Abstraction - Three Red Hearts - Pixel War 2 [License](https://creativecommons.o
 Carpenter Brut - Trilogy - Roller Mobster (In Video Playthrough) [BandCamp](https://carpenterbrut.bandcamp.com/track/roller-mobster-2)  
 SHREDDER 1984 - Prophet of Doom - Sharpen that Guillotine [BandCamp](https://shredder1984.bandcamp.com/track/sharpen-that-guillotine)  
 ## Screenshots
-![](screen captures/Screen-shot.png?raw=true)
-![](screen captures/Web-Audio-Mixer-Canvas.gif?raw=true)
-![](screen captures/Web-Audio-Mixer-File-Upload.gif?raw=true)
+![](screen-captures/Screen-shot.png?raw=true)
+![](screen-captures/Web-Audio-Mixer-Canvas.gif?raw=true)
+![](screen-captures/Web-Audio-Mixer-File-Upload.gif?raw=true)
