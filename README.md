@@ -15,7 +15,7 @@ the tool. Next time around, I would like to create a synthesizer VST plugin.
 Abstraction - Three Red Hearts - Pixel War 2 [License](https://creativecommons.org/licenses/by/4.0/)  
 Carpenter Brut - Trilogy - Roller Mobster [BandCamp](https://carpenterbrut.bandcamp.com/track/roller-mobster-2)  
 SHREDDER 1984 - Prophet of Doom - Sharpen that Guillotine [BandCamp](https://shredder1984.bandcamp.com/track/sharpen-that-guillotine)  
-## Screenshots
+## Screen Captures
 ![](ScreenCaptures/Screen-shot.png?raw=true)
 ![](ScreenCaptures/Web-Audio-Mixer-Canvas.gif?raw=true)
 ![](ScreenCaptures/Web-Audio-Mixer-File-Upload.gif?raw=true)
